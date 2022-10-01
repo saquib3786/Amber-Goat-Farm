@@ -193,7 +193,7 @@ nav .menu-button i{
     top: 499px;
     left: -100%;
     background: #111;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: block;
     transition: all 0.3s ease;
