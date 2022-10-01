@@ -189,19 +189,11 @@ nav .menu-button i{
 
 @media (max-width: 481px) {
   nav ul {
-    /* margin: 0px;
-    padding: 0px;
-    list-style: none;
-    position: absolute;
-    right: -100%;
-    background-color: #000000;
-    display: block;
-    width: 100%; */
     position: absolute;
     top: 499px;
     left: -100%;
     background: #111;
-    height: 1000vh;
+    height: 100vh;
     width: 100%;
     display: block;
     transition: all 0.3s ease;
