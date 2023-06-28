@@ -21,7 +21,7 @@ pipeline {
                 // Set environment variables for container deployment
                 CONTAINER_NAME = 'amber-goat-farm'
                 CONTAINER_PORT = '80'
-                HOST_PORT = '8080' // Change this to the desired host port
+                HOST_PORT = '8085' // Change this to the desired host port
             }
             
             steps {
