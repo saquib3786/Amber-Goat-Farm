@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 // Build a Docker image with your website code
-                sh 'docker build -t amber-goat-farm .'
+                sh 'sudo docker build -t amber-goat-farm .'
             }
         }
 
