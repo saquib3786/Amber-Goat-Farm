@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Clone your website repository
-                git 'https://github.com/saquib3786/Amber-Goat-Farm.git'
+                 git branch: 'main', url: 'https://github.com/saquib3786/Amber-Goat-Farm.git'
             }
         }
 
