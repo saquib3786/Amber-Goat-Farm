@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    options {
+        // Specify the Git installation to use
+        gitTool 'Default Git'
+    }
 
     stages {
         stage('Build') {
