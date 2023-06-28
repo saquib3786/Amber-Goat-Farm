@@ -1,9 +1,9 @@
 pipeline {
     agent any
     
-    options {
+    tools {
         // Specify the Git installation to use
-        gitTool 'Default Git'
+        git 'Default Git'
     }
 
     stages {
