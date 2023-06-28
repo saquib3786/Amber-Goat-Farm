@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Clone your website repository
+                git 'https://github.com/saquib3786/Amber-Goat-Farm.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                // Build a Docker image with your website code
+                sh 'docker build -t amber-goat-farm .'
+            }
+        }
+
+        stage('Deploy') {
+            environment {
+                // Set environment variables for container deployment
+                CONTAINER_NAME = 'amber-goat-farm'
+                CONTAINER_PORT = '80'
+                HOST_PORT = '8080' // Change this to the desired host port
+            }
+            
+            steps {
+                // Stop and remove any existing containers with the same name
+                sh "docker stop ${CONTAINER_NAME} || true"
+                sh "docker rm ${CONTAINER_NAME} || true"
+
+                // Run the Nginx container with your website
+                sh "docker run -d --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} amber-goat-farm"
+            }
+        }
+    }
+}
