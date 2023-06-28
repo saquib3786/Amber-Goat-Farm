@@ -26,11 +26,11 @@ pipeline {
             
             steps {
                 // Stop and remove any existing containers with the same name
-                sh "docker stop ${CONTAINER_NAME} || true"
-                sh "docker rm ${CONTAINER_NAME} || true"
+                sh "sudo docker stop ${CONTAINER_NAME} || true"
+                sh "sudo docker rm ${CONTAINER_NAME} || true"
 
                 // Run the Nginx container with your website
-                sh "docker run -d --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} amber-goat-farm"
+                sh "sudo docker run -d --name ${CONTAINER_NAME} -p ${HOST_PORT}:${CONTAINER_PORT} amber-goat-farm"
             }
         }
     }
