@@ -1,11 +1,6 @@
 pipeline {
     agent any
-    
-    tools {
-        // Specify the Git installation to use
-        git 'Default Git'
-    }
-
+   
     stages {
         stage('Build') {
             steps {
